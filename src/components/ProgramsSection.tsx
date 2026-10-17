@@ -1,0 +1,8 @@
+import { ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { programs } from '../data/siteData'
+import SectionHeading from './SectionHeading'
+
+export default function ProgramsSection() {
+  return <section className="bg-[var(--color-dark-bg)] py-20 text-white sm:py-28"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end"><SectionHeading eyebrow="TRAIN WITH PURPOSE" title="Find your kind of strong" text="Whether you are building strength or finding your rhythm, there is a program for you." light/><Link to="/packages" className="btn-outline w-fit">All Programs <ArrowUpRight size={16}/></Link></div><div className="grid gap-5 md:grid-cols-3">{programs.map(program=><article key={program.number} className="group relative min-h-[390px] overflow-hidden rounded-2xl bg-neutral-900"><img src={program.image} alt={program.title} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"/><div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent"/><div className="absolute inset-x-0 bottom-0 p-7"><span className="font-[Barlow_Condensed] text-4xl font-black text-[var(--color-primary)]">{program.number}</span><h3 className="mt-2 font-[Barlow_Condensed] text-3xl font-bold uppercase">{program.title}</h3><p className="mt-3 max-w-sm text-sm leading-6 text-white/65">{program.text}</p><Link to="/packages" className="mt-5 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-white transition group-hover:text-[var(--color-primary)]">Explore program <ArrowUpRight size={16}/></Link></div></article>)}</div></div></section>
+}

@@ -1,0 +1,10 @@
+import { ArrowUpRight, CheckCircle2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import SectionHeading from './SectionHeading'
+
+export default function AboutSection() {
+  return <section id="about" className="overflow-hidden bg-white py-20 sm:py-28"><div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-8">
+    <div className="relative mx-auto w-full max-w-xl"><div className="absolute left-8 top-8 h-[82%] w-[75%] rounded-[45%_45%_8px_8px] bg-[var(--color-primary)]" /><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1100&q=90" alt="Athlete training in a modern gym" className="relative z-10 h-[470px] w-full rounded-[45%_45%_8px_8px] object-cover object-center sm:h-[570px]" /><div className="absolute bottom-8 left-0 z-20 max-w-[230px] border-l-4 border-[var(--color-primary)] bg-black p-5 text-white"><p className="font-[Barlow_Condensed] text-4xl font-black">15<span className="text-[var(--color-primary)]">+</span></p><p className="text-xs font-bold uppercase tracking-widest text-white/65">Years of getting stronger</p></div></div>
+    <div><SectionHeading eyebrow="ABOUT POWERFIT" title="We help you become your strongest self" text="Your goals are personal. Your training should be too. At PowerFit, we combine expert coaching, quality equipment, and a welcoming community to help you move forward."/><div className="mt-8 grid gap-5 sm:grid-cols-2">{[['Expert Coaching','Support from coaches who understand your goals.'],['Modern Equipment','Everything you need for an effective session.'],['Real Community','A motivating space for every fitness level.'],['Flexible Plans','Memberships that fit your life and schedule.']].map(([title,text])=><div key={title} className="flex gap-3"><CheckCircle2 className="mt-1 shrink-0 text-[var(--color-primary)]" size={20}/><div><h3 className="font-extrabold">{title}</h3><p className="mt-1 text-sm leading-6 text-[var(--color-muted)]">{text}</p></div></div>)}</div><Link to="/about" className="btn-primary mt-9">Discover Our Story <ArrowUpRight size={17}/></Link></div>
+  </div></section>
+}
