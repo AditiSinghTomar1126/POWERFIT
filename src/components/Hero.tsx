@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, CheckCircle2, Dumbbell, Users, Trophy, Clock3 } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Dumbbell, Users, Trophy, Clock3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { stats } from '../data/siteData'
 
