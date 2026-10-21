@@ -1,10 +1,115 @@
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import SectionHeading from './SectionHeading'
+import { Dumbbell, CircleGauge } from "lucide-react";
 
-export default function AboutSection() {
-  return <section id="about" className="overflow-hidden bg-white py-20 sm:py-28"><div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-8">
-    <div className="relative mx-auto w-full max-w-xl"><div className="absolute left-8 top-8 h-[82%] w-[75%] rounded-[45%_45%_8px_8px] bg-[var(--color-primary)]" /><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1100&q=90" alt="Athlete training in a modern gym" className="relative z-10 h-[470px] w-full rounded-[45%_45%_8px_8px] object-cover object-center sm:h-[570px]" /><div className="absolute bottom-8 left-0 z-20 max-w-[230px] border-l-4 border-[var(--color-primary)] bg-black p-5 text-white"><p className="font-[Barlow_Condensed] text-4xl font-black">15<span className="text-[var(--color-primary)]">+</span></p><p className="text-xs font-bold uppercase tracking-widest text-white/65">Years of getting stronger</p></div></div>
-    <div><SectionHeading eyebrow="ABOUT POWERFIT" title="We help you become your strongest self" text="Your goals are personal. Your training should be too. At PowerFit, we combine expert coaching, quality equipment, and a welcoming community to help you move forward."/><div className="mt-8 grid gap-5 sm:grid-cols-2">{[['Expert Coaching','Support from coaches who understand your goals.'],['Modern Equipment','Everything you need for an effective session.'],['Real Community','A motivating space for every fitness level.'],['Flexible Plans','Memberships that fit your life and schedule.']].map(([title,text])=><div key={title} className="flex gap-3"><CheckCircle2 className="mt-1 shrink-0 text-[var(--color-primary)]" size={20}/><div><h3 className="font-extrabold">{title}</h3><p className="mt-1 text-sm leading-6 text-[var(--color-muted)]">{text}</p></div></div>)}</div><Link to="/about" className="btn-primary mt-9">Discover Our Story <ArrowUpRight size={17}/></Link></div>
-  </div></section>
+export default function About() {
+  return (
+    <section
+      id="about"
+      className="relative overflow-hidden bg-white px-6 py-16 md:px-12 md:py-20 lg:px-20"
+    >
+      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        {/* Left: Runner Image */}
+        <div className="relative flex min-h-[440px] items-center justify-center md:min-h-[600px]">
+          {/* Red background shape */}
+          <div className="absolute left-[15%] top-[0%] h-[100%] w-[50%]  bg-[#f20b3a]" style={{ clipPath: "ellipse(100% 50% at 100% 50%)", }} />
+
+          {/* Decorative dots */}
+          <div className="absolute right-[17%] top-0 h-20 w-24 opacity-40"
+            style={{
+              backgroundImage:
+                "radial-gradient(#aaa 1.5px, transparent 1.5px)",
+              backgroundSize: "12px 12px",
+            }}
+          />
+
+          {/* Background typography */}
+          <span
+            className="absolute right-[8%] top-[8%] select-none text-7xl font-black tracking-widest text-transparent opacity-70"
+            style={{ WebkitTextStroke: "1.5px #dedede", writingMode: "vertical-rl" }}
+          >
+            RUNNING
+          </span>
+
+          {/* Runner image */}
+          <img
+            src="/about-runner.png"
+            alt="Athlete running"
+            className="relative z-10 h-auto max-h-[600px] w-full object-contain"
+          />
+
+          {/* Decorative waves */}
+          <div className="absolute left-[25%] top-[30%] z-20 flex flex-col gap-2">
+            {[1, 2, 3].map((line) => (
+              <svg key={line} width="90" height="15" viewBox="0 0 90 12" fill="none">
+                <path
+                  d="M1 6 C10 -2 20 -2 29 6 S48 14 57 6 S76 -2 89 6"
+                  stroke="white"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ))}
+          </div>
+        </div>
+
+        {/* Right: About Content */}
+        <div className="relative">
+           <div className="mb-4 flex items-center gap-3 text-xs font-bold tracking-[0.35em]">
+           ABOUT US
+            <span className="h-[2px] w-20 bg-[#f20b3a]" />
+          </div>
+
+          <h2 className="mt-5 text-4xl font-extrabold leading-[1.12] tracking-tight text-black md:text-5xl">
+            We Can Give A Shape
+            <br />
+            Of Your Body Here!
+          </h2>
+
+          {/* Red underline accent */}
+          <div className="ml-auto mt-4 h-3 w-40 rounded-[50%] border-t-[4px] border-[#f20b3a] rotate-[-5deg]" />
+
+          <p className="mt-4 text-base leading-7 text-[#6b6b6b]">
+            Gymat an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. May has
+            survived not only five centuries but also the leap
+            into electronic typesetting.
+          </p>
+
+          {/* Features */}
+          <div className="mt-10 space-y-7">
+            <div className="flex items-start gap-5">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#fce8ed] text-[#f20b3a]">
+                <Dumbbell size={31} strokeWidth={1.5} />
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-black">
+                  Modern Equipment
+                </h3>
+                <p className="mt-2 leading-7 text-[#6b6b6b]">
+                  Gymat an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-5">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#fce8ed] text-[#f20b3a]">
+                <CircleGauge size={31} strokeWidth={1.5} />
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-black">
+                  Body Fitness
+                </h3>
+                <p className="mt-2 leading-7 text-[#6b6b6b]">
+                  Gymat an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

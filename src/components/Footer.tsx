@@ -11,7 +11,11 @@ export default function Footer() {
         <div><h3 className="mb-5 font-bold uppercase tracking-wider">Opening Hours</h3><p className="mb-3 text-sm text-white/55">Mon – Fri <span className="float-right text-white">5am – 11pm</span></p><p className="mb-3 text-sm text-white/55">Saturday <span className="float-right text-white">6am – 9pm</span></p><p className="text-sm text-white/55">Sunday <span className="float-right text-white">7am – 7pm</span></p></div>
         <div><h3 className="mb-5 font-bold uppercase tracking-wider">Get Started</h3><p className="text-sm leading-7 text-white/55">Ready to make your next move? Let’s build a plan around you.</p><Link to="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold uppercase text-[var(--color-primary)]">Talk to our team <ArrowUpRight size={16} /></Link></div>
       </div>
-      <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/40">© {new Date().getFullYear()} PowerFit Gym. All rights reserved.</div>
+      <div className=" flex flex-wrap justify-between border-t border-white/10 px-10 py-5 text-center text-xs text-white/40">
+      <span>© {new Date().getFullYear()} PowerFit Gym. All rights reserved.</span>
+
+      <span>Made and Managed by ATNexus</span>
+       </div>
     </footer>
   )
 }
