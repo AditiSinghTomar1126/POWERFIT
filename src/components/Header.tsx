@@ -15,7 +15,7 @@ export default function Header() {
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map(link => <NavLink key={link.label} to={link.href} className={({ isActive }) => `text-xs font-bold uppercase tracking-wider transition hover:text-[var(--color-primary)] ${isActive ? 'text-[var(--color-primary)]' : 'text-white/85'}`}>{link.label}</NavLink>)}
         </nav>
-        <Link to="/membership" className="btn-primary hidden !rounded-md !px-5 !py-3 lg:inline-flex">Join Class <ArrowUpRight size={16} /></Link>
+        <Link to="/membership" className="btn-primary !hidden !rounded-md !px-5 !py-3 lg:inline-flex">Join Class <ArrowUpRight size={16} /></Link>
         <button aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)} className="grid h-10 w-10 place-items-center rounded-lg border border-white/20 lg:hidden">{open ? <X /> : <Menu />}</button>
       </div>
       {open && <nav className="grid gap-1 border-t border-white/10 bg-black px-5 py-4 lg:hidden">{navLinks.map(link => <NavLink key={link.label} to={link.href} onClick={() => setOpen(false)} className={({ isActive }) => `rounded-md px-3 py-3 text-sm font-bold uppercase ${isActive ? 'bg-white/10 text-[var(--color-primary)]' : 'text-white'}`}>{link.label}</NavLink>)}<Link to="/membership" onClick={() => setOpen(false)} className="btn-primary mt-2">Join Class <ArrowUpRight size={16} /></Link></nav>}

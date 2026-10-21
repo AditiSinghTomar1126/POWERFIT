@@ -1,4 +1,4 @@
-import { ArrowRight, Dumbbell, Users, Award, Zap, Search, Menu, ShoppingBasket } from "lucide-react";
+import { ArrowRight, Dumbbell, Users, Award, Zap} from "lucide-react";
 
 const stats = [
   { icon: Dumbbell, label: "24/7 GYM ACCESS" },
